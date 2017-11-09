@@ -1,4 +1,4 @@
-package com.edwin.androidskelton.ui;
+package com.edwin.androidskelton.ui4md;
 
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -34,7 +34,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_detail_4md);
 
         //// butterknife
         ButterKnife.bind(this);

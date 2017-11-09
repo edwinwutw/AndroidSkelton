@@ -1,4 +1,4 @@
-package com.edwin.androidskelton.ui;
+package com.edwin.androidskelton.ui4md;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_4md);
 
         //// butterknife
         ButterKnife.bind(this);

@@ -10,4 +10,5 @@
 
 -2017/11/08 Configuration 'compile' in project ':app' is deprecated. Use 'implementation' instead. https://stackoverflow.com/questions/44493378/whats-the-difference-between-implementation-and-compile-in-gradle
 
-
+-2017/11/09 Add Android Architecture component https://codelabs.developers.google.com/codelabs/build-app-with-arch-components/index.html?index=..%2F..%2Findex#0
+https://stackoverflow.com/questions/46467561/difference-between-google-and-maven-url-https-maven-google-com

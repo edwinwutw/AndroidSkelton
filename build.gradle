@@ -3,7 +3,9 @@
 buildscript {
     
     repositories {
+        //This google() is only used in new android studio 3.0 and after; The actual repository URL used is `"https://dl.google.com/dl/android/maven2/" as specified here. https://maven.google.com actually points to the same repository.
         google()
+        //maven { url 'https://maven.google.com' }
         jcenter()
     }
     dependencies {
@@ -19,11 +21,11 @@ buildscript {
 ext.arch_version = "1.0.0"
 ext.support_version = "26.1.0"
 ext.constraint_layout_version = "1.0.2"
-ext.firebase_jobdispatcher_version = "0.7.0"
 ext.junit_version = "4.12"
 ext.support_test_version = "1.0.1"
 ext.test_espresso_version = "3.0.1"
 ext.butterknife_version = "8.4.0"
+ext.firebase_jobdispatcher_version = "0.7.0"
 
 allprojects {
     repositories {
