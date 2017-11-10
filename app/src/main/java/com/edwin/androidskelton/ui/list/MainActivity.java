@@ -1,8 +1,10 @@
 package com.edwin.androidskelton.ui.list;
 
+import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.res.ResourcesCompat;
@@ -19,10 +21,12 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.edwin.androidskelton.R;
+import com.edwin.androidskelton.data.database.ListWeatherEntry;
 import com.edwin.androidskelton.ui.detail.DetailActivity;
 import com.edwin.androidskelton.utilities.InjectorUtils;
 
 import java.util.Date;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -141,19 +145,35 @@ public class MainActivity extends AppCompatActivity implements
 
         /* Setting the adapter attaches it to the RecyclerView in our layout. */
         mForecastRecyclerview.setAdapter(mForecastAdapter);
+
+
         MainViewModelFactory factory = InjectorUtils.provideMainActivityViewModelFactory(this.getApplicationContext());
         mViewModel = ViewModelProviders.of(this, factory).get(MainActivityViewModel.class);
 
-        mViewModel.getForecast().observe(this, weatherEntries -> {
-            mForecastAdapter.swapForecast(weatherEntries);
-            if (mPosition == RecyclerView.NO_POSITION) mPosition = 0;
-            mForecastRecyclerview.smoothScrollToPosition(mPosition);
+        mViewModel.getForecast().observe(this, new Observer<List<ListWeatherEntry>>() {
+                    @Override
+                    public void onChanged(@Nullable List<ListWeatherEntry> weatherEntries) {
+                        mForecastAdapter.swapForecast(weatherEntries);
+                        if (mPosition == RecyclerView.NO_POSITION) mPosition = 0;
+                        mForecastRecyclerview.smoothScrollToPosition(mPosition);
 
-            // Show the weather list or the loading screen based on whether the forecast data exists
-            // and is loaded
-            if (weatherEntries != null && weatherEntries.size() != 0) showWeatherDataView();
-            else showLoading();
+                        // Show the weather list or the loading screen based on whether the forecast data exists
+                        // and is loaded
+                        if (weatherEntries != null && weatherEntries.size() != 0) showWeatherDataView();
+                        else showLoading();
+                    }
         });
+//lambda
+//        mViewModel.getForecast().observe(this, weatherEntries -> {
+//            mForecastAdapter.swapForecast(weatherEntries);
+//            if (mPosition == RecyclerView.NO_POSITION) mPosition = 0;
+//            mForecastRecyclerview.smoothScrollToPosition(mPosition);
+//
+//            // Show the weather list or the loading screen based on whether the forecast data exists
+//            // and is loaded
+//            if (weatherEntries != null && weatherEntries.size() != 0) showWeatherDataView();
+//            else showLoading();
+//        });
     }
 
     /**

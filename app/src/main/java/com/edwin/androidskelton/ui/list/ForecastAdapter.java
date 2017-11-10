@@ -324,7 +324,7 @@ class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ForecastAdapt
 
         ForecastAdapterViewHolder(View view) {
             super(view);
-            ButterKnife.bind(this, itemView);
+            ButterKnife.bind(this, view);
 //            iconView = view.findViewById(R.id.weather_icon);
 //            dateView = view.findViewById(R.id.date);
 //            descriptionView = view.findViewById(R.id.weather_description);

@@ -1,8 +1,10 @@
 package com.edwin.androidskelton.ui.detail;
 
+import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 
@@ -46,10 +48,18 @@ public class DetailActivity extends AppCompatActivity {
         mViewModel = ViewModelProviders.of(this, factory).get(DetailActivityViewModel.class);
 
         // Observers changes in the WeatherEntry with the id mId
-        mViewModel.getWeather().observe(this, weatherEntry -> {
-            // If the weather forecast details change, update the UI
-            if (weatherEntry != null) bindWeatherToUI(weatherEntry);
+        mViewModel.getWeather().observe(this, new Observer<WeatherEntry>() {
+            @Override
+            public void onChanged(@Nullable WeatherEntry weatherEntry) {
+                // If the weather forecast details change, update the UI
+                if (weatherEntry != null) bindWeatherToUI(weatherEntry);
+            }
         });
+// lambda
+//        mViewModel.getWeather().observe(this, weatherEntry -> {
+//            // If the weather forecast details change, update the UI
+//            if (weatherEntry != null) bindWeatherToUI(weatherEntry);
+//        });
 
     }
 
