@@ -24,7 +24,7 @@ ext.constraint_layout_version = "1.0.2"
 ext.junit_version = "4.12"
 ext.support_test_version = "1.0.1"
 ext.test_espresso_version = "3.0.1"
-ext.butterknife_version = "8.4.0"
+ext.butterknife_version = "8.8.1"
 ext.firebase_jobdispatcher_version = "0.7.0"
 
 allprojects {
