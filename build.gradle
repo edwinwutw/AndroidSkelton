@@ -18,14 +18,32 @@ buildscript {
     }
 }
 
-ext.arch_version = "1.0.0"
-ext.support_version = "26.1.0"
-ext.constraint_layout_version = "1.0.2"
-ext.junit_version = "4.12"
-ext.support_test_version = "1.0.1"
-ext.test_espresso_version = "3.0.1"
-ext.butterknife_version = "8.8.1"
-ext.firebase_jobdispatcher_version = "0.7.0"
+// This block encapsulates custom properties and makes them available to all
+// modules in the project.
+ext {
+//    // The following are only a few examples of the types of properties you can define.
+//    compileSdkVersion = 26
+//    // You can also create properties to specify versions for dependencies.
+//    // Having consistent versions between modules can avoid conflicts with behavior.
+//    supportLibVersion = "26.1.0"
+//    ...
+    arch_version = "1.0.0"
+    support_version = "26.1.0"
+    constraint_layout_version = "1.0.2"
+    junit_version = "4.12"
+    support_test_version = "1.0.1"
+    test_espresso_version = "3.0.1"
+    butterknife_version = "8.8.1"
+    firebase_jobdispatcher_version = "0.7.0"
+}
+//ext.arch_version = "1.0.0"
+//ext.support_version = "26.1.0"
+//ext.constraint_layout_version = "1.0.2"
+//ext.junit_version = "4.12"
+//ext.support_test_version = "1.0.1"
+//ext.test_espresso_version = "3.0.1"
+//ext.butterknife_version = "8.8.1"
+//ext.firebase_jobdispatcher_version = "0.7.0"
 
 allprojects {
     repositories {
