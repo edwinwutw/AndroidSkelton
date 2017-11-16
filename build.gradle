@@ -27,6 +27,8 @@ ext {
 //    // Having consistent versions between modules can avoid conflicts with behavior.
 //    supportLibVersion = "26.1.0"
 //    ...
+    _compileSdkVersion = 26
+
     arch_version = "1.0.0"
     support_version = "26.1.0"
     constraint_layout_version = "1.0.2"
